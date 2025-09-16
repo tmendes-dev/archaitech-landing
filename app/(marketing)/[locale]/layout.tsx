@@ -1,58 +1,59 @@
 import type {Metadata} from "next";
-import {NextIntlClientProvider} from "next-intl";
 import {getLocale} from "@/lib/i18n";
-import {getMessages} from "next-intl/server";
 import "@/styles/globals.css";
 
+// Fonts
+import { Inter, Space_Grotesk } from "next/font/google";
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
 
 export async function generateMetadata({params}:{params:{locale:string}}): Promise<Metadata> {
   const locale = getLocale(params.locale);
-  const title = locale === "pt"
-    ? "ArchAItechs — Consultoria em TI, Arquitetura de Software, AI/ML e BI"
-    : "ArchAItechs — IT Consulting, Software Architecture, AI/ML & BI";
-  const description = locale === "pt"
-    ? "Consultoria sênior em arquitetura de software, inteligência artificial, machine learning e business intelligence."
-    : "Senior consulting in software architecture, artificial intelligence, machine learning, and business intelligence.";
+  const title =
+    locale === "pt"
+      ? "ArchAItechs — Consultoria em TI, Arquitetura de Software, AI/ML e BI"
+      : "ArchAItechs — IT Consulting, Software Architecture, AI/ML & BI";
+  const description =
+    locale === "pt"
+      ? "Consultoria sênior em arquitetura de software, IA/ML e BI."
+      : "Senior consulting in software architecture, AI/ML and BI.";
+
   return {
     title,
     description,
-    metadataBase: new URL("http://localhost:3000"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {"pt-BR": "/pt", "en-US": "/en"}
-    },
     openGraph: { title, description, url: `/${locale}`, type: "website", images: ["/images/hero.webp"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/images/hero.webp"] }
+    twitter: { card: "summary_large_image", title, description, images: ["/images/hero.webp"] },
   };
 }
 
-export default async function LocaleLayout({children, params}: any) {
+export default function LocaleLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: {locale: string};
+}) {
   const locale = getLocale(params.locale);
-  const messages = await getMessages();
+
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{__html: JSON.stringify({
-              "@context":"https://schema.org",
-              "@type":"Organization",
-              "name":"ArchAItechs",
-              "url":"https://www.archaitech.com.br",
-              "logo":"/images/logo.svg",
-              "sameAs":[
-                "https://github.com/reneamendes",
-                "https://github.com/tmendes-dev"
-              ],
-              "member":[
-                {"@type":"Person","name":"René Mendes","url":"https://github.com/reneamendes"},
-                {"@type":"Person","name":"Thomas Mendes","url":"https://github.com/tmendes-dev"}
-              ]
-            })}}
-          />
-        </NextIntlClientProvider>
+    <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        {/* No-FOUC: set dark early from localStorage or prefers-color-scheme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    var d = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if(d) document.documentElement.classList.add("dark");
+  }catch(e){}
+})();`,
+          }}
+        />
+      </head>
+      <body className="font-sans">
+        {children}
       </body>
     </html>
   );
