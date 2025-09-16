@@ -2,7 +2,8 @@ import type {Metadata} from "next";
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale} from "@/lib/i18n";
 import {getMessages} from "next-intl/server";
-import "../globals.css";
+import "@/styles/globals.css";
+
 
 export async function generateMetadata({params}:{params:{locale:string}}): Promise<Metadata> {
   const locale = getLocale(params.locale);

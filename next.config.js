@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { appDir: true },
-  images: { unoptimized: true } // to simplify local static export if needed
+  // Use default image optimization (better LCP). Remove the line below if you don’t need custom image config.
+  images: {},
 };
+
 export default nextConfig;
