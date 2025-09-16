@@ -1,0 +1,48 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Next.js
+.next/
+out/
+dist/
+build/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.pid
+*.seed
+*.tsbuildinfo
+
+# Env files (NUNCA subir secrets!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage / Tests
+coverage/
+*.lcov
+
+# Misc
+*.swp
+*.swo
+.idea/
