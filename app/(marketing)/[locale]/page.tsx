@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {locales, getLocale} from "@/lib/i18n";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function Page({params}:{params:{locale:string}}) {
   const t = useTranslations();
   const locale = getLocale(params.locale);
   return (
     <main>
+      <SpeedInsights/>
       <header className="mx-auto max-w-6xl px-4 py-6 flex items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-3">
           <Image src="/images/logo.svg" alt="ArchAItechs" width={36} height={36} priority />
