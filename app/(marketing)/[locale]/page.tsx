@@ -17,56 +17,36 @@ const FALLBACK: Record<Locale, Record<string, string>> = {
     "nav.services": "Serviços",
     "nav.partners": "Sócios",
     "nav.contact": "Contato",
-
     "hero.title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
     "hero.subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
     "hero.cta": "Solicitar diagnóstico",
-
     "services.title": "O que fazemos",
-
     "partners.title": "Sócios",
     "partners.rene.role": "AI, ML e BI",
     "partners.rene.bio": "Especialista em IA/ML aplicado, MLOps e BI. Conecta dados, modelos e produto para gerar impacto real.",
     "partners.thomas.role": "Arquitetura & Engenharia de Software",
     "partners.thomas.bio": "Arquitetura .NET, microsserviços e alta performance. Foco em escalabilidade, observabilidade e DX.",
-
     "cta.title": "Pronto para o próximo nível?",
     "cta.subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
     "cta.button": "Falar com a ArchAItechs",
-
-    "form.name": "Nome",
-    "form.email": "Email",
-    "form.message": "Conte sobre seu desafio",
-
-    "alert.sent": "Mensagem enviada! Obrigado.",
     "footer.madeWith": "Feito com Next.js"
   },
   en: {
     "nav.services": "Services",
     "nav.partners": "Partners",
     "nav.contact": "Contact",
-
     "hero.title": "Software Architecture & AI that drive outcomes",
     "hero.subtitle": "Senior consulting in IT, AI/ML and BI — from strategy to delivery.",
     "hero.cta": "Request an assessment",
-
     "services.title": "What we do",
-
     "partners.title": "Partners",
     "partners.rene.role": "AI, ML & BI",
     "partners.rene.bio": "Expert in applied AI/ML, MLOps and BI. Connects data, models and product to drive real impact.",
     "partners.thomas.role": "Architecture & Software Engineering",
     "partners.thomas.bio": ".NET architecture, microservices and high performance. Focus on scalability, observability and DX.",
-
     "cta.title": "Ready for the next level?",
     "cta.subtitle": "Tell us your challenge. We’ll send an assessment within 2 business days.",
     "cta.button": "Talk to ArchAItechs",
-
-    "form.name": "Name",
-    "form.email": "Email",
-    "form.message": "Tell us about your challenge",
-
-    "alert.sent": "Message sent! Thank you.",
     "footer.madeWith": "Made with Next.js"
   }
 };
@@ -99,27 +79,20 @@ function getBadges(messages: any, locale: Locale): string[] {
   if (Array.isArray(nested)) return nested as string[];
   const flat = messages?.["hero.badges"];
   if (Array.isArray(flat)) return flat as string[];
-  // usa fallback se existir
-  const b = FALLBACK[locale]["hero.badges"];
-  if (b) {
-    try { return JSON.parse(b); } catch {}
-  }
-  return [];
+  // sem badges no JSON → usa algumas padrão
+  return locale === "pt" ? ["Core Web Vitals", "SEO", "Entrega sênior"] : ["Core Web Vitals", "SEO", "Senior delivery"];
 }
 
 export default async function Page({
-  params,
-  searchParams
+  params
 }: {
   params: { locale: string };
-  searchParams?: { sent?: string };
 }) {
   const locale: Locale = getLocale(params.locale);
   const messages: any = locale === "pt" ? (ptMessages as any) : (enMessages as any);
 
   const services = getServices(messages);
   const badges = getBadges(messages, locale);
-  const sent = searchParams?.sent === "1";
 
   return (
     <main>
@@ -273,7 +246,7 @@ export default async function Page({
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact (form desativado; mostra e-mail) */}
       <section id="contact" className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
         <FadeIn>
           <h2 className="text-2xl sm:text-3xl font-bold text-center font-display">{tKey(messages, "cta.title", locale)}</h2>
@@ -282,41 +255,30 @@ export default async function Page({
           </p>
         </FadeIn>
 
-        {sent && (
-          <div className="mx-auto mt-4 max-w-2xl rounded-xl bg-green-600/10 text-green-600 px-4 py-3 text-sm">
-            {tKey(messages, "alert.sent", locale)}
-          </div>
-        )}
-
         <FadeIn delay={0.05}>
-          <form method="post" action="/api/contact" className="mt-8 grid gap-3 sm:gap-4">
-            {/* honeypot anti-spam */}
-            <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-            <input
-              required
-              name="name"
-              placeholder={tKey(messages, "form.name", locale)}
-              className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base"
-            />
-            <input
-              required
-              type="email"
-              name="email"
-              placeholder={tKey(messages, "form.email", locale)}
-              className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base"
-            />
-            <textarea
-              required
-              name="message"
-              placeholder={tKey(messages, "form.message", locale)}
-              className="border rounded-xl p-3 min-h-[120px] bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base"
-            />
-            <HoverLift>
-              <button className="rounded-xl px-5 sm:px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-cyan-500">
-                {tKey(messages, "cta.button", locale)}
-              </button>
-            </HoverLift>
-          </form>
+          <div className="mt-8 grid gap-4">
+            <p className="text-center text-sm sm:text-base">
+              {locale === "pt" ? "Enquanto isso, fale com a gente por e-mail: " : "Meanwhile, reach us via email: "}
+              <a href="mailto:tmendes.dev@gmail.com" className="text-blue-600 underline break-all">
+                tmendes.dev@gmail.com
+              </a>
+            </p>
+
+            {/* 
+              FORM TEMPORARIAMENTE DESATIVADO
+              <form method="post" action="/api/contact" className="mt-2 grid gap-3 sm:gap-4">
+                <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+                <input required name="name" placeholder={tKey(messages, "form.name", locale)} className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base" />
+                <input required type="email" name="email" placeholder={tKey(messages, "form.email", locale)} className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base" />
+                <textarea required name="message" placeholder={tKey(messages, "form.message", locale)} className="border rounded-xl p-3 min-h-[120px] bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-sm sm:text-base" />
+                <HoverLift>
+                  <button className="rounded-xl px-5 sm:px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-cyan-500">
+                    {tKey(messages, "cta.button", locale)}
+                  </button>
+                </HoverLift>
+              </form>
+            */}
+          </div>
         </FadeIn>
       </section>
 
