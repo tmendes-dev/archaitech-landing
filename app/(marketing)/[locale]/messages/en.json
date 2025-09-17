@@ -1,13 +1,10 @@
 {
-  "nav": {
-    "services": "Services",
-    "partners": "Partners",
-    "contact": "Contact"
-  },
+  "nav": { "services": "Services", "partners": "Partners", "contact": "Contact" },
   "hero": {
     "title": "Software Architecture & AI that drive outcomes",
     "subtitle": "Senior consulting in IT, AI/ML and BI — from strategy to delivery.",
-    "cta": "Request an assessment"
+    "cta": "Request an assessment",
+    "badges": ["Core Web Vitals", "SEO", "Senior delivery"]
   },
   "services": {
     "title": "What we do",
@@ -20,12 +17,21 @@
   },
   "partners": {
     "title": "Partners",
-    "rene": { "role": "AI, ML & BI" },
-    "thomas": { "role": "Architecture & Software Engineering" }
+    "rene": {
+      "role": "AI, ML & BI",
+      "bio": "Expert in applied AI/ML, MLOps and BI. Connects data, models and product to drive real impact."
+    },
+    "thomas": {
+      "role": "Architecture & Software Engineering",
+      "bio": ".NET architecture, microservices and high performance. Focus on scalability, observability and DX."
+    }
   },
   "cta": {
     "title": "Ready for the next level?",
     "subtitle": "Tell us your challenge. We’ll send an assessment within 2 business days.",
     "button": "Talk to ArchAItechs"
-  }
+  },
+  "form": { "name": "Name", "email": "Email", "message": "Tell us about your challenge" },
+  "alert": { "sent": "Message sent! Thank you." },
+  "footer": { "madeWith": "Made with Next.js" }
 }

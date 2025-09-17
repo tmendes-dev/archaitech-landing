@@ -3,7 +3,8 @@
   "hero": {
     "title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
     "subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
-    "cta": "Solicitar diagnóstico"
+    "cta": "Solicitar diagnóstico",
+    "badges": ["Core Web Vitals", "SEO", "Entrega sênior"]
   },
   "services": {
     "title": "O que fazemos",
@@ -16,12 +17,21 @@
   },
   "partners": {
     "title": "Sócios",
-    "rene": { "role": "AI, ML e BI" },
-    "thomas": { "role": "Arquitetura & Engenharia de Software" }
+    "rene": {
+      "role": "AI, ML e BI",
+      "bio": "Especialista em IA/ML aplicado, MLOps e BI. Conecta dados, modelos e produto para gerar impacto real."
+    },
+    "thomas": {
+      "role": "Arquitetura & Engenharia de Software",
+      "bio": "Arquitetura .NET, microsserviços e alta performance. Foco em escalabilidade, observabilidade e DX."
+    }
   },
   "cta": {
     "title": "Pronto para o próximo nível?",
     "subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
     "button": "Falar com a ArchAItechs"
-  }
+  },
+  "form": { "name": "Nome", "email": "Email", "message": "Conte sobre seu desafio" },
+  "alert": { "sent": "Mensagem enviada! Obrigado." },
+  "footer": { "madeWith": "Feito com Next.js" }
 }
