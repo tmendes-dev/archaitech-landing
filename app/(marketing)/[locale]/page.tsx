@@ -1,27 +1,32 @@
-// app/(marketing)/[locale]/page.tsx
 import Link from "next/link";
 import Image from "next/image";
-import {getLocale, locales} from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
+import { getLocale } from "@/lib/i18n";
 import ptMessages from "@/messages/pt.json";
 import enMessages from "@/messages/en.json";
 import ThemeToggle from "./components/ThemeToggle";
+import LanguageSwitch from "./components/LanguageSwitch";
 import FadeIn from "./components/FadeIn";
 import HoverLift from "./components/HoverLift";
 
 type ServiceItem = { title: string; desc: string };
 
-// Same helpers from before (works for nested or flat JSON)
+// Lê nested "a.b.c", cai para flat "a.b.c", senão devolve a própria chave
 function tKey(messages: any, key: string): string {
   const parts = key.split(".");
   let cur: any = messages;
   for (const p of parts) {
     if (cur && typeof cur === "object" && p in cur) cur = cur[p];
-    else { cur = undefined; break; }
+    else {
+      cur = undefined;
+      break;
+    }
   }
   if (typeof cur === "string") return cur;
   if (typeof messages?.[key] === "string") return messages[key];
   return key;
 }
+
 function getServices(messages: any): ServiceItem[] {
   const nested = messages?.services?.items;
   if (Array.isArray(nested)) return nested as ServiceItem[];
@@ -31,14 +36,21 @@ function getServices(messages: any): ServiceItem[] {
   return [];
 }
 
-export default async function Page({params}:{params:{locale:string}}) {
-  const locale = getLocale(params.locale);
+export default async function Page({
+  params,
+  searchParams
+}: {
+  params: { locale: string };
+  searchParams?: { sent?: string };
+}) {
+  const locale: Locale = getLocale(params.locale);
   const messages: any = locale === "pt" ? (ptMessages as any) : (enMessages as any);
   const services = getServices(messages);
+  const sent = searchParams?.sent === "1";
 
   return (
     <main>
-      {/* Header (sticky, blurred, dark-aware) */}
+      {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-950/70 border-b border-slate-200 dark:border-slate-800">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <Link href={`/${locale}`} className="flex items-center gap-3">
@@ -46,29 +58,24 @@ export default async function Page({params}:{params:{locale:string}}) {
             <span className="font-semibold">ArchAItechs</span>
           </Link>
           <nav className="flex items-center gap-4 text-sm">
-            <a href="#services" className="hover:underline">{tKey(messages, "nav.services")}</a>
-            <a href="#partners" className="hover:underline">{tKey(messages, "nav.partners")}</a>
+            <a href="#services" className="hover:underline">
+              {tKey(messages, "nav.services")}
+            </a>
+            <a href="#partners" className="hover:underline">
+              {tKey(messages, "nav.partners")}
+            </a>
             <a href="#contact" className="rounded-xl px-4 py-2 bg-blue-600 text-white hover:opacity-90">
               {tKey(messages, "nav.contact")}
             </a>
             <div className="h-5 w-px bg-slate-300 dark:bg-slate-700" />
-            <div className="flex items-center gap-2">
-              {locales.map((l) => (
-                <Link
-                  key={l}
-                  href={`/${l}`}
-                  className={`px-2 py-1 rounded ${l === locale ? "font-bold underline" : "opacity-80"}`}
-                >
-                  {l.toUpperCase()}
-                </Link>
-              ))}
-            </div>
+            {/* 🔁 Client Component para trocar idioma e gravar cookie */}
+            <LanguageSwitch current={locale} />
             <ThemeToggle />
           </nav>
         </div>
       </header>
 
-      {/* Hero (dark surface) */}
+      {/* Hero */}
       <section className="bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
           <FadeIn>
@@ -86,7 +93,9 @@ export default async function Page({params}:{params:{locale:string}}) {
                 </a>
               </HoverLift>
               <ul className="mt-6 flex gap-6 text-xs text-slate-500 dark:text-slate-400">
-                <li>Core Web Vitals</li><li>SEO</li><li>Senior delivery</li>
+                <li>Core Web Vitals</li>
+                <li>SEO</li>
+                <li>Senior delivery</li>
               </ul>
             </div>
           </FadeIn>
@@ -97,14 +106,14 @@ export default async function Page({params}:{params:{locale:string}}) {
               alt="AI & Architecture"
               width={800}
               height={520}
-              className="rounded-2xl shadow-soft"
+              className="rounded-2xl shadow-[0_6px_30px_-12px_rgba(0,0,0,0.25)]"
               priority
             />
           </FadeIn>
         </div>
       </section>
 
-      {/* Services (cards on dark) */}
+      {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-4 py-16">
         <FadeIn>
           <h2 className="text-2xl md:text-3xl font-bold font-display">{tKey(messages, "services.title")}</h2>
@@ -138,9 +147,7 @@ export default async function Page({params}:{params:{locale:string}}) {
           <div className="mt-8 grid md:grid-cols-2 gap-6">
             <FadeIn delay={0.05}>
               <article className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 dark:bg-slate-900">
-                <h3 className="font-semibold">
-                  René Mendes — {tKey(messages, "partners.rene.role")}
-                </h3>
+                <h3 className="font-semibold">René Mendes — {tKey(messages, "partners.rene.role")}</h3>
                 <p className="mt-2 text-slate-600 dark:text-slate-300">AI/ML aplicado, MLOps e BI.</p>
                 <a className="text-blue-600 underline" href="https://github.com/reneamendes" target="_blank" rel="noreferrer">
                   github.com/reneamendes
@@ -149,9 +156,7 @@ export default async function Page({params}:{params:{locale:string}}) {
             </FadeIn>
             <FadeIn delay={0.1}>
               <article className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 dark:bg-slate-900">
-                <h3 className="font-semibold">
-                  Thomas Mendes — {tKey(messages, "partners.thomas.role")}
-                </h3>
+                <h3 className="font-semibold">Thomas Mendes — {tKey(messages, "partners.thomas.role")}</h3>
                 <p className="mt-2 text-slate-600 dark:text-slate-300">Arquitetura .NET, microsserviços e alta performance.</p>
                 <a className="text-blue-600 underline" href="https://github.com/tmendes-dev" target="_blank" rel="noreferrer">
                   github.com/tmendes-dev
@@ -168,13 +173,40 @@ export default async function Page({params}:{params:{locale:string}}) {
           <h2 className="text-2xl md:text-3xl font-bold text-center font-display">{tKey(messages, "cta.title")}</h2>
           <p className="text-center mt-2 text-slate-600 dark:text-slate-300">{tKey(messages, "cta.subtitle")}</p>
         </FadeIn>
+
+        {sent && (
+          <div className="mx-auto mt-4 max-w-2xl rounded-xl bg-green-600/10 text-green-600 px-4 py-3 text-sm">
+            {locale === "pt" ? "Mensagem enviada! Obrigado." : "Message sent! Thank you."}
+          </div>
+        )}
+
         <FadeIn delay={0.05}>
           <form method="post" action="/api/contact" className="mt-8 grid gap-4">
-            <input required name="name" placeholder="Nome / Name" className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700" />
-            <input required type="email" name="email" placeholder="Email" className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700" />
-            <textarea required name="message" placeholder="Conte sobre seu desafio" className="border rounded-xl p-3 min-h-[120px] bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700" />
+            {/* honeypot anti-spam */}
+            <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input
+              required
+              name="name"
+              placeholder="Nome / Name"
+              className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700"
+            />
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="border rounded-xl p-3 bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700"
+            />
+            <textarea
+              required
+              name="message"
+              placeholder="Conte sobre seu desafio"
+              className="border rounded-xl p-3 min-h-[120px] bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700"
+            />
             <HoverLift>
-              <button className="rounded-xl px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-cyan-500"> {tKey(messages, "cta.button")} </button>
+              <button className="rounded-xl px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-cyan-500">
+                {tKey(messages, "cta.button")}
+              </button>
             </HoverLift>
           </form>
         </FadeIn>

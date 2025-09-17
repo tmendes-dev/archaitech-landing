@@ -23,8 +23,8 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       className="rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-2 text-sm hover:opacity-80"
-      aria-label="Toggle theme"
-      title="Toggle theme"
+      aria-label="Alternar tema"
+      title="Alternar tema"
     >
       {dark ? "🌙 Dark" : "☀️ Light"}
     </button>

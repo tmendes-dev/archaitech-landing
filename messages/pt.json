@@ -1,21 +1,31 @@
 {
-  "nav.services": "Serviços",
-  "nav.partners": "Sócios",
-  "nav.contact": "Contato",
-  "hero.title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
-  "hero.subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
-  "hero.cta": "Solicitar diagnóstico",
-  "services.title": "O que fazemos",
-  "services.items": [
-    {"title":"Arquitetura de Software","desc":"Domain-Driven Design, microsserviços, observabilidade, performance."},
-    {"title":"AI & Machine Learning","desc":"Modelos, MLOps, automações e copilots aplicados ao negócio."},
-    {"title":"Business Intelligence","desc":"Dashboards, governança de dados e decisões guiadas por métricas."},
-    {"title":"Cloud & DevEx","desc":"Pipelines, custo/benefício e plataformas para acelerar times."}
-  ],
-  "partners.title": "Sócios",
-  "partners.rene.role": "AI, ML e BI",
-  "partners.thomas.role": "Arquitetura & Engenharia de Software",
-  "cta.title": "Pronto para o próximo nível?",
-  "cta.subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
-  "cta.button": "Falar com a ArchAItechs"
+  "nav": {
+    "services": "Serviços",
+    "partners": "Sócios",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
+    "subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
+    "cta": "Solicitar diagnóstico"
+  },
+  "services": {
+    "title": "O que fazemos",
+    "items": [
+      { "title": "Arquitetura de Software", "desc": "Domain-Driven Design, microsserviços, observabilidade, performance." },
+      { "title": "AI & Machine Learning", "desc": "Modelos, MLOps, automações e copilots aplicados ao negócio." },
+      { "title": "Business Intelligence", "desc": "Dashboards, governança de dados e decisões guiadas por métricas." },
+      { "title": "Cloud & DevEx", "desc": "Pipelines, custo/benefício e plataformas para acelerar times." }
+    ]
+  },
+  "partners": {
+    "title": "Sócios",
+    "rene": { "role": "AI, ML e BI" },
+    "thomas": { "role": "Arquitetura & Engenharia de Software" }
+  },
+  "cta": {
+    "title": "Pronto para o próximo nível?",
+    "subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
+    "button": "Falar com a ArchAItechs"
+  }
 }

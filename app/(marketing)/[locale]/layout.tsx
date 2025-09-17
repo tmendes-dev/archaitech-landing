@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 // Fonts
 import { Inter, Space_Grotesk } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
 
 export async function generateMetadata({params}:{params:{locale:string}}): Promise<Metadata> {
   const locale = getLocale(params.locale);
@@ -22,7 +22,7 @@ export async function generateMetadata({params}:{params:{locale:string}}): Promi
     title,
     description,
     openGraph: { title, description, url: `/${locale}`, type: "website", images: ["/images/hero.webp"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/images/hero.webp"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/images/hero.webp"] }
   };
 }
 
@@ -36,9 +36,12 @@ export default function LocaleLayout({
   const locale = getLocale(params.locale);
 
   return (
-    <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${display.variable}`}>
       <head>
-        {/* No-FOUC: set dark early from localStorage or prefers-color-scheme */}
+        {/* Favicon SVG */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+        {/* No-FOUC: aplica dark cedo (cookie/localStorage ou prefers-color-scheme) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -52,7 +55,7 @@ export default function LocaleLayout({
           }}
         />
       </head>
-      <body className="font-sans">
+      <body className="font-sans bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
         {children}
       </body>
     </html>

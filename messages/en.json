@@ -1,21 +1,31 @@
 {
-  "nav.services": "Services",
-  "nav.partners": "Partners",
-  "nav.contact": "Contact",
-  "hero.title": "Software Architecture & AI that drive outcomes",
-  "hero.subtitle": "Senior consulting in IT, AI/ML and BI — from strategy to delivery.",
-  "hero.cta": "Request an assessment",
-  "services.title": "What we do",
-  "services.items": [
-    {"title":"Software Architecture","desc":"DDD, microservices, observability, performance."},
-    {"title":"AI & Machine Learning","desc":"Models, MLOps, automations and business copilots."},
-    {"title":"Business Intelligence","desc":"Dashboards, data governance and metrics-driven decisions."},
-    {"title":"Cloud & DevEx","desc":"Pipelines, cost/perf and platforms to accelerate teams."}
-  ],
-  "partners.title": "Partners",
-  "partners.rene.role": "AI, ML & BI",
-  "partners.thomas.role": "Architecture & Software Engineering",
-  "cta.title": "Ready for the next level?",
-  "cta.subtitle": "Tell us your challenge. We’ll send an assessment within 2 business days.",
-  "cta.button": "Talk to ArchAItechs"
+  "nav": {
+    "services": "Services",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Software Architecture & AI that drive outcomes",
+    "subtitle": "Senior consulting in IT, AI/ML and BI — from strategy to delivery.",
+    "cta": "Request an assessment"
+  },
+  "services": {
+    "title": "What we do",
+    "items": [
+      { "title": "Software Architecture", "desc": "DDD, microservices, observability, performance." },
+      { "title": "AI & Machine Learning", "desc": "Models, MLOps, automations and business copilots." },
+      { "title": "Business Intelligence", "desc": "Dashboards, data governance and metrics-driven decisions." },
+      { "title": "Cloud & DevEx", "desc": "Pipelines, cost/perf and platforms to accelerate teams." }
+    ]
+  },
+  "partners": {
+    "title": "Partners",
+    "rene": { "role": "AI, ML & BI" },
+    "thomas": { "role": "Architecture & Software Engineering" }
+  },
+  "cta": {
+    "title": "Ready for the next level?",
+    "subtitle": "Tell us your challenge. We’ll send an assessment within 2 business days.",
+    "button": "Talk to ArchAItechs"
+  }
 }
