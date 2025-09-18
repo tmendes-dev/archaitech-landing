@@ -39,14 +39,11 @@ export async function POST(req: NextRequest) {
         subject: `Novo lead: ${data.name}`,
         text: `Nome: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
       });
-    } else {
-      console.log("[CONTACT]", data);
-    }
+    } 
 
     const locale = req.nextUrl.pathname.split("/")[1] || "pt";
     return NextResponse.redirect(new URL(`/${locale}?sent=1`, req.url), {status: 302});
   } catch (e) {
-    console.error("CONTACT_ERROR", e);
     return NextResponse.json({ok: false, error: "send_failed"}, {status: 500});
   }
 }

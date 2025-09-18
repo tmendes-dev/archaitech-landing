@@ -6,9 +6,15 @@
 html, body { min-height: 100%; }
 body { @apply antialiased bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100; }
 
+
 /* Font variables from next/font */
 .font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
 .font-display { font-family: var(--font-display), ui-sans-serif, system-ui; }
+.font-mono, code, pre, kbd, samp {
+	font-family: var(--font-mono), 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Hack Nerd Font', 'FiraMono Nerd Font', 'monospace', 'Nerd Font', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New';
+	font-variant-ligatures: contextual;
+	font-feature-settings: "calt" 1;
+}
 
 /* Links + focus */
 a { @apply hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded; }

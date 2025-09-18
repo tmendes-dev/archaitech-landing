@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+// Dynamically import ScrollToTopButton to avoid SSR issues
+const ScrollToTopButton = dynamic(() => import("./components/ScrollToTopButton"), { ssr: false });
+const Testimonials = dynamic(() => import("./components/Testimonials"), { ssr: false });
+const Analytics = dynamic(() => import("./components/Analytics"), { ssr: false });
+const FeedbackWidget = dynamic(() => import("./components/FeedbackWidget"), { ssr: false });
 import { getLocale } from "@/lib/i18n";
 import "@/styles/globals.css";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Fira_Code } from "next/font/google";
+import ThemeAndFontClassFixer from "./components/ThemeAndFontClassFixer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const mono = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || undefined;
 const LINKEDIN_URL = "https://www.linkedin.com/company/archaitechs-solutions";
@@ -74,6 +82,18 @@ export default function LocaleLayout({
 }) {
   const locale = getLocale(params.locale);
 
+  // Social meta variables
+  const title =
+    locale === "pt"
+      ? "ArchAItechs — Consultoria em TI, Arquitetura de Software, AI/ML e BI"
+      : "ArchAItechs — IT Consulting, Software Architecture, AI/ML & BI";
+  const description =
+    locale === "pt"
+      ? "Consultoria sênior em arquitetura de software, IA/ML e BI."
+      : "Senior consulting in software architecture, AI/ML and BI.";
+  const ogImagePath = "/images/hero.webp";
+  const ogImage = SITE_URL ? `${SITE_URL}${ogImagePath}` : ogImagePath;
+
   const orgLdJson = SITE_URL
     ? {
         "@context": "https://schema.org",
@@ -104,22 +124,21 @@ export default function LocaleLayout({
   const siteLd = siteLdJson ? JSON.stringify(siteLdJson) : null;
 
   return (
-    <html lang={locale} className={`${inter.variable} ${display.variable}`}>
+  <html lang={locale} className={`${inter.variable} ${display.variable} ${mono.variable}`}>
       <head>
+        {/* Open Graph & Twitter meta tags for social sharing */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={SITE_URL ? `${SITE_URL}/${locale}` : `/${locale}`} />
+        <meta property="og:site_name" content="ArchAItechs" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* Inline script permitido pela CSP ('unsafe-inline') */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-(function(){
-  try{
-    var t = localStorage.getItem("theme");
-    var d = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if(d) document.documentElement.classList.add("dark");
-  }catch(e){}
-})();`,
-          }}
-        />
+        {/* Theme is handled client-side for hydration safety */}
         {orgLd && (
           <script
             type="application/ld+json"
@@ -135,7 +154,13 @@ export default function LocaleLayout({
         {/* ⚠️ Não defina meta CSP aqui; os headers já cuidam da CSP */}
       </head>
       <body className="font-sans bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
-        {children}
+        <ThemeAndFontClassFixer>
+          <Analytics />
+          {children}
+          <Testimonials />
+          <FeedbackWidget />
+          <ScrollToTopButton />
+        </ThemeAndFontClassFixer>
       </body>
     </html>
   );

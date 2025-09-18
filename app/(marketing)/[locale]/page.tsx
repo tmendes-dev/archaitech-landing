@@ -23,7 +23,6 @@ import { DEFAULT_MESSAGES_EN } from "./messages/defaults-en";
 import { DeepPartial } from "./messages/types";
 
 import enMessagesJson from "./messages/en.json";
-import ptMessagesJson from "./messages/pt.json";
 import SiteHeader from "./components/SiteHeader";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
@@ -36,6 +35,7 @@ import Contact from "./components/Contact";
 import SiteFooter from "./components/SiteFooter";
 import EngagementModels from "./components/EngagementModels";
 import FAQ from "./components/FAQ";
+// import Testimonials from "./components/Testimonials"; // [Commented out: What Our Clients Say section]
 
 // Deep merge two objects, where `override` can be a DeepPartial of `base`
 // Arrays are replaced, not merged
@@ -152,13 +152,8 @@ export default async function Page({ params }: { params: { locale: string } }) {
 
   // Treat JSONs as DeepPartial so nested keys can be missing safely
   const enPartial = enMessagesJson as unknown as DeepPartial<Messages>;
-  const ptPartial = ptMessagesJson as unknown as DeepPartial<Messages>;
-
-  // Fill EN to full shape, then overlay PT if selected
-  const enFilled: Messages = deepMerge<Messages>(DEFAULT_MESSAGES_EN, enPartial);
-  const merged: Messages = locale === "pt"
-    ? deepMerge<Messages>(enFilled, ptPartial)
-    : enFilled;
+  // Always use English messages only
+  const merged: Messages = deepMerge<Messages>(DEFAULT_MESSAGES_EN, enPartial);
 
   const t = tFactory(merged);
 
@@ -169,10 +164,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
   const cases = merged.cases.items ?? [];
   const techPillars = merged.tech.pillars ?? [];
   const badges = merged.hero.badges ?? [];
-  console.log({
-    engagementCount: merged.engagement?.items?.length,
-    faqCount: merged.faq?.items?.length,
-  });
+ 
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -181,14 +173,28 @@ export default async function Page({ params }: { params: { locale: string } }) {
       <Stats t={t} />
       <Services t={t} services={services} />
       <Process t={t} steps={steps} />
-      <CaseStudies t={t} items={cases} />
+      <CaseStudies
+        title={t("cases.title")}
+        subtitle={t("cases.subtitle")}
+        empty={t("cases.empty") || "Case studies not found."}
+        challengeLabel={t("cases.labels.challenge") || "Challenge"}
+        solutionLabel={t("cases.labels.solution") || "Solution"}
+        resultLabel={t("cases.labels.result") || "Result"}
+        items={cases}
+      />
       <Tech t={t} pillars={techPillars} />
+      <EngagementModels title={merged.engagement?.title ?? ''} items={engagement} />
       <Partners
         t={t}
         rene={{ role: t("partners.rene.role"), bio: t("partners.rene.bio") }}
         thomas={{ role: t("partners.thomas.role"), bio: t("partners.thomas.bio") }}
       />
+      {/*
+        // [Commented out: What Our Clients Say section]
+        <Testimonials />
+      */}
       <Contact t={t} locale={locale} />
+      <FAQ title={merged.faq.title} items={faq} />
       <SiteFooter t={t} />
     </main>
   );

@@ -1,0 +1,134 @@
+{
+  "engagement": {
+    "title": "Modelos de Participación",
+    "items": [
+      { "title": "Estrategia y Evaluación", "desc": "Análisis integral de la arquitectura y capacidades de IA actuales con recomendaciones prácticas." },
+      { "title": "Entrega de Proyectos", "desc": "Implementación de software e IA de extremo a extremo con hitos y entregables claros." },
+      { "title": "Aumento de Equipo", "desc": "Nuestros expertos se integran a tu equipo para acelerar el desarrollo y transferir conocimiento." }
+    ]
+  },
+  "meta": {
+    "title": "ArchAItechs — Arquitectura de Software, AI/ML & BI",
+    "description": "Consultoría senior ayudando a CTOs y equipos de producto a entregar resultados con Arquitectura de Software, AI/ML y BI. Evaluación en 2 días hábiles."
+  },
+  "nav": {
+    "services": "Servicios",
+    "process": "Proceso",
+    "cases": "Casos",
+    "tech": "Tecnología",
+    "engagement": "Participación",
+    "partners": "Socios",
+    "contact": "Contacto",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "eyebrow": "Consultoría Senior",
+    "title": "Arquitectura & IA que generan resultados",
+    "subtitle": "Ayudamos a CTOs y equipos a reducir tiempos de procesamiento, ganar observabilidad y llevar IA a producción — con roadmap práctico y entregas rápidas.",
+    "cta": "Solicita tu evaluación",
+    "cta_secondary": "Ver cómo trabajamos",
+    "badges": [
+      "Evaluación en 2 días hábiles",
+      "AI/ML lista para producción",
+      "Sistemas observables y escalables"
+    ]
+  },
+  "problem": {
+    "title": "Cuando velocidad y seguridad chocan",
+    "bullets": [
+      "Deploys impredecibles y largos retrasan el roadmap.",
+      "Alta latencia e incidentes poco claros minan la confianza.",
+      "Costos de nube crecientes sin claridad de valor.",
+      "Backlog de datos y dashboards que no generan acción.",
+      "POCs de IA que nunca llegan a producción."
+    ]
+  },
+  "solution": {
+    "title": "Qué resolvemos",
+    "bullets": [
+      "Releases predecibles y ciclos más cortos.",
+      "Observabilidad de extremo a extremo con SLOs claros.",
+      "FinOps práctico: costo/beneficio que se paga solo.",
+      "Métricas que conectan producto y operación a la estrategia.",
+      "IA en producción con MLOps y ROI medible."
+    ]
+  },
+  "stats": {
+    "clients": "Clientes satisfechos",
+    "projects": "Proyectos entregados",
+    "years": "Años de experiencia"
+  },
+  "services": {
+    "title": "Qué hacemos",
+    "items": [
+      { "title": "Arquitectura & Ingeniería", "desc": "Diseñamos sistemas robustos y escalables para entregas rápidas y seguras." },
+      { "title": "Cloud & Infraestructura", "desc": "Construimos y optimizamos plataformas cloud seguras y económicas." },
+      { "title": "AI & Machine Learning", "desc": "Entregamos IA/ML práctica que llega a producción." },
+      { "title": "Business Intelligence", "desc": "Creamos dashboards y flujos de datos que impulsan decisiones." }
+    ]
+  },
+  "process": {
+    "title": "Cómo trabajamos",
+    "steps": [
+      { "title": "Evaluación (0–2 días)", "desc": "Mapeamos riesgos, restricciones y oportunidades. Recibes un informe conciso con quick wins y decisiones iniciales para acelerar con seguridad." },
+      { "title": "Quick wins (2–6 semanas)", "desc": "Implementamos los cambios de mayor impacto — generalmente observabilidad, CI/CD y performance — para generar valor visible rápidamente." },
+      { "title": "Roadmap de 90 días", "desc": "Plan práctico cubriendo arquitectura, AI/ML/BI y métricas. Dueños, hitos y criterios de éxito claros para el negocio." },
+      { "title": "Transferencia de Conocimiento & Soporte", "desc": "Tu equipo queda listo para operar y evolucionar la solución. Incluye documentación, capacitación y soporte continuo según necesidad." }
+    ]
+  },
+  "cases": {
+    "title": "Casos",
+    "subtitle": "Proyectos representativos que apoyamos",
+    "labels": { "challenge": "Desafío", "solution": "Solución", "result": "Resultado" },
+    "items": [
+      { "title": "Auditoría de licitaciones para farmacias", "challenge": "Comparar propuestas complejas de proveedores con precisión y trazabilidad.", "solution": "Aplicación con reglas personalizables y reportes para licitaciones farmacéuticas, basada en microservicios, caché distribuido, Kubernetes, MongoDB, Kafka y observabilidad de extremo a extremo.", "result": "Análisis más rápidos, trazas de auditoría claras y escalabilidad en picos de licitación." },
+      { "title": "Motor de precios en tiempo real", "challenge": "Picos de tráfico causaban latencia y timeouts bajo carga.", "solution": "Servicios orientados a eventos con caché resiliente y circuit breaking. Profiling enfocado en los puntos críticos.", "result": "Latencia p95 cerca de 120 ms y error por debajo de 0,1% en 10× tráfico esperado." },
+      { "title": "Dashboards operativos que impulsan acción", "challenge": "Equipos sin visión confiable de la salud del sistema y prioridades.", "solution": "BI unificado con SLOs, drill-down y vistas amigables para on-call.", "result": "Incidentes resueltos más rápido y priorización de producto basada en datos." }
+    ]
+  },
+  "partners": {
+    "title": "Socios",
+    "rene": { "role": "AI, ML & BI", "bio": "Experto en IA/ML aplicada, MLOps y BI. Conecta datos, modelos y producto para generar impacto real." },
+    "thomas": { "role": "Arquitectura & Ingeniería de Software", "bio": "Arquitectura .NET, microservicios y alto rendimiento. Enfoque en escalabilidad, observabilidad y experiencia del desarrollador." }
+  },
+  "social_proof": {
+    "title": "Confiado por equipos que necesitan resultados",
+    "bullets": [
+      "Trabajo senior hands-on — sin juniors sin supervisión.",
+      "Nos integramos con tu stack (.NET, Azure/AWS, datos modernos).",
+      "Resultados semanales claros y decisiones registradas."
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      { "q": "¿Qué recibo en la evaluación?", "a": "Un informe conciso con riesgos, oportunidades, 3–5 quick wins y un plan de 90 días con dueños y criterios de éxito." },
+      { "q": "¿Qué tan rápido podemos empezar?", "a": "Normalmente iniciamos la evaluación en hasta 2 días hábiles. Si hay un plazo ajustado, ajustamos el alcance." },
+      { "q": "¿Trabajan junto a nuestro equipo?", "a": "Sí. Trabajamos junto a ingenieros y líderes, co-creando decisiones y dejando documentación y playbooks claros." },
+      { "q": "¿En qué stacks se enfocan?", "a": "Arquitectura en .NET/Azure y AWS, microservicios, observabilidad, performance, AI/ML y BI con enfoque práctico y listo para producción." }
+    ]
+  },
+  "tech": {
+    "title": "Tecnologías que usamos",
+    "subtitle": "Elegidas por ajuste, no por moda",
+    "pillars": [
+      { "name": "AI/ML", "icon": "🧿", "items": ["PyTorch", "scikit-learn", "MLflow"] },
+      { "name": "Cloud", "icon": "☁️", "items": ["Azure", "AWS", "GCP", "Docker", "Kubernetes"] },
+      { "name": "Datos", "icon": "💲", "items": ["PostgreSQL/SQL Server", "MongoDB/Neo4j", "Spark", "Power BI", "Tableau"] },
+      { "name": "Dev", "icon": "💻", "items": [".NET", "Python", "Node.js", "React/Next.js"] }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para el siguiente nivel?",
+    "subtitle": "Cuéntanos tu desafío. Enviamos una evaluación en hasta 2 días hábiles.",
+    "button": "Habla con ArchAItechs"
+  },
+  "form": {
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Cuéntanos tu desafío"
+  },
+  "footer": {
+    "madeWith": "Hecho con Next.js"
+  }
+}

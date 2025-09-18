@@ -1,3 +1,6 @@
+
+import FadeIn from "./FadeIn";
+
 // Server Component
 type FaqItem = { q: string; a: string };
 
@@ -30,10 +33,12 @@ export default function FAQ({
 
       <div className="mt-8 divide-y divide-slate-200 dark:divide-slate-800">
         {items?.map((it, i) => (
-          <details key={i} className="py-4 group">
-            <summary className="cursor-pointer font-medium list-none">{it.q}</summary>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 leading-relaxed">{it.a}</p>
-          </details>
+          <FadeIn key={i} delay={0.1 + i * 0.1}>
+            <details className="py-4 group">
+              <summary className="cursor-pointer font-medium list-none">{it.q}</summary>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 leading-relaxed">{it.a}</p>
+            </details>
+          </FadeIn>
         ))}
       </div>
     </section>
