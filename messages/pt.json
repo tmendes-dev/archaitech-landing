@@ -1,31 +1,173 @@
 {
-  "nav": {
+"nav": {
     "services": "Serviços",
-    "partners": "Sócios",
+    "process": "Processo",
+    "engagement": "Engajamento",
+    "cases": "Cases",
+    "tech": "Tecnologias",
+    "faq": "FAQ",
+    "partners": "Parceiros",
     "contact": "Contato"
   },
   "hero": {
-    "title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
-    "subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
-    "cta": "Solicitar diagnóstico"
+    "title": "Architecture & AI that solve real problems",
+    "subtitle": "Hands-on senior consultants in software, data and ML. We design, build and deliver solutions that work.",
+    "cta": "Request an assessment",
+    "badges": ["Performance", "Reliability", "Clear outcomes"]
+  },
+  "stats": {
+    "clients": "Happy Clients",
+    "projects": "Projects Delivered",
+    "years": "Years of Experience"
   },
   "services": {
-    "title": "O que fazemos",
+    "title": "What we do",
     "items": [
-      { "title": "Arquitetura de Software", "desc": "Domain-Driven Design, microsserviços, observabilidade, performance." },
-      { "title": "AI & Machine Learning", "desc": "Modelos, MLOps, automações e copilots aplicados ao negócio." },
-      { "title": "Business Intelligence", "desc": "Dashboards, governança de dados e decisões guiadas por métricas." },
-      { "title": "Cloud & DevEx", "desc": "Pipelines, custo/benefício e plataformas para acelerar times." }
+      {
+        "title": "Software architecture",
+        "desc": "Systems that scale and evolve: microservices when they bring value, simplicity when it's the right call."
+      },
+      {
+        "title": "AI & machine learning",
+        "desc": "From data prep to production: models, evaluation, MLOps and ongoing monitoring."
+      },
+      {
+        "title": "Business intelligence",
+        "desc": "Dashboards and metrics that guide decisions. Governance and structure where it matters."
+      },
+      {
+        "title": "Cloud & developer experience",
+        "desc": "Pipelines, cost/perf tuning and tooling to empower teams without adding friction."
+      }
+    ]
+  },
+  "process": {
+    "title": "Our process",
+    "steps": [
+      {
+        "title": "Assessment",
+        "desc": "Understand goals, constraints and what success means for your business."
+      },
+      {
+        "title": "Strategy",
+        "desc": "Build a practical plan with milestones, risks and success metrics."
+      },
+      {
+        "title": "Delivery",
+        "desc": "Implement with best practices in architecture, engineering and documentation."
+      },
+      {
+        "title": "Operate & improve",
+        "desc": "Measure in production, learn continuously and iterate safely."
+      }
+    ]
+  },
+  "engagement": {
+    "title": "Engagement Models",
+    "items": [
+      {
+        "title": "Strategy & Assessment",
+        "desc": "Comprehensive analysis of your current architecture and AI capabilities with actionable recommendations."
+      },
+      {
+        "title": "Project Delivery",
+        "desc": "End-to-end implementation of software and AI solutions with clear milestones and deliverables."
+      },
+      {
+        "title": "Team Augmentation",
+        "desc": "Embed our experts in your teams to accelerate development and knowledge transfer."
+      }
+    ]
+  },
+  "cases": {
+    "title": "Case studies",
+    "subtitle": "Representative projects we've supported",
+    "items": [
+      {
+        "title": "Tender auditing for pharma",
+        "challenge": "Compare complex proposals across suppliers with accuracy and traceability.",
+        "solution": "Application with customizable comparison rules and reporting for pharmaceutical tenders, built on microservices with distributed cache, Kubernetes, MongoDB, Kafka and end-to-end observability.",
+        "result": "Faster reviews, clear audit trails, and scalable throughput during peak tender cycles."
+      },
+      {
+        "title": "Real-time pricing engine",
+        "challenge": "Traffic spikes caused latency and timeouts under load.",
+        "solution": "Event-driven services with resilient caching and circuit breaking. Focused profiling of critical hot paths.",
+        "result": "p95 latency near 120 ms and error rate below 0.1% at 10× expected traffic."
+      },
+      {
+        "title": "Operations dashboards that drive action",
+        "challenge": "Teams lacked a shared, reliable view of system health and priorities.",
+        "solution": "Unified BI with SLOs, drill-down capabilities and on-call friendly views.",
+        "result": "Faster incident resolution and data-backed prioritization of product work."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Technologies we use",
+    "subtitle": "Chosen for fit, not hype",
+    "pillars": [
+      {
+        "name": "AI/ML",
+        "icon": "🤖",
+        "items": ["PyTorch", "scikit-learn", "MLflow"]
+      },
+      {
+        "name": "Cloud",
+        "icon": "☁️",
+        "items": ["Azure", "AWS", "GCP", "Docker", "Kubernetes"]
+      },
+      {
+        "name": "Data",
+        "icon": "📊",
+        "items": ["PostgreSQL/SQL Server", "MongoDB/Neo4j", "Spark", "Power BI", "Tableau"]
+      },
+      {
+        "name": "Dev",
+        "icon": "💻",
+        "items": [".NET", "Python", "Node.js", "React/Next.js"]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How long do projects typically take?",
+        "a": "Project timelines vary based on complexity, but most engagements range from 3-9 months. We start with a 2-week assessment to provide accurate estimates."
+      },
+      {
+        "q": "Do you work with startups or only enterprises?",
+        "a": "We work with organizations of all sizes. Our focus is on solving complex technical challenges, whether you're a growing startup or an established enterprise."
+      },
+      {
+        "q": "What industries do you specialize in?",
+        "a": "While our technical expertise applies across industries, we have deep experience in healthcare, pharmaceuticals, finance, and e-commerce sectors."
+      },
+      {
+        "q": "Can you help with legacy system modernization?",
+        "a": "Yes, modernizing legacy systems is one of our specialties. We focus on incremental improvements that deliver value while maintaining system stability."
+      }
     ]
   },
   "partners": {
-    "title": "Sócios",
-    "rene": { "role": "AI, ML e BI" },
-    "thomas": { "role": "Arquitetura & Engenharia de Software" }
+    "title": "Partners",
+    "rene": {
+      "role": "AI, ML & BI",
+      "bio": "Expert in applied AI/ML, MLOps and BI. Connects data, models and product to drive real impact."
+    },
+    "thomas": {
+      "role": "Architecture & Software Engineering",
+      "bio": ".NET architecture, microservices and high performance. Focus on scalability, observability and DX."
+    }
   },
-  "cta": {
-    "title": "Pronto para o próximo nível?",
-    "subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
-    "button": "Falar com a ArchAItechs"
+  "contact": {
+    "title": "Ready for the next level?",
+    "subtitle": "Tell us your challenge. We'll send an assessment within 2 business days.",
+    "button": "Talk to ArchAItechs"
+  },
+  "footer": {
+    "madeWith": "Made with Next.js",
+    "rights": "All rights reserved."
   }
 }

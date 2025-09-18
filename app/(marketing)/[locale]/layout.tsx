@@ -14,7 +14,11 @@ const SUPPORTED_LANGS: Record<string, string> = {
   pt: SITE_URL ? `${SITE_URL}/pt` : "/pt",
 };
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
   const locale = getLocale(params.locale);
 
   const title =
@@ -70,15 +74,14 @@ export default function LocaleLayout({
 }) {
   const locale = getLocale(params.locale);
 
-  // JSON-LD só quando houver domínio configurado (evita dados parciais)
   const orgLdJson = SITE_URL
     ? {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "ArchAItechs Solutions",
-        "url": SITE_URL,
-        "logo": `${SITE_URL}/images/logo.svg`,
-        "sameAs": [LINKEDIN_URL],
+        name: "ArchAItechs Solutions",
+        url: SITE_URL,
+        logo: `${SITE_URL}/images/logo.svg`,
+        sameAs: [LINKEDIN_URL],
       }
     : null;
 
@@ -86,21 +89,25 @@ export default function LocaleLayout({
     ? {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "ArchAItechs",
-        "url": SITE_URL,
-        "potentialAction": {
+        name: "ArchAItechs",
+        url: SITE_URL,
+        potentialAction: {
           "@type": "SearchAction",
-          "target": `${SITE_URL}/search?q={search_term_string}`,
+          target: `${SITE_URL}/search?q={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       }
     : null;
 
+  // Pré-serializa JSON-LD
+  const orgLd = orgLdJson ? JSON.stringify(orgLdJson) : null;
+  const siteLd = siteLdJson ? JSON.stringify(siteLdJson) : null;
+
   return (
     <html lang={locale} className={`${inter.variable} ${display.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* No-FOUC: aplica dark cedo (cookie/localStorage ou prefers-color-scheme) */}
+        {/* Inline script permitido pela CSP ('unsafe-inline') */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -113,20 +120,19 @@ export default function LocaleLayout({
 })();`,
           }}
         />
-        {orgLdJson && (
+        {orgLd && (
           <script
             type="application/ld+json"
-            // @ts-expect-error: JSON-LD literal
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLdJson) }}
+            dangerouslySetInnerHTML={{ __html: orgLd }}
           />
         )}
-        {siteLdJson && (
+        {siteLd && (
           <script
             type="application/ld+json"
-            // @ts-expect-error: JSON-LD literal
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLdJson) }}
+            dangerouslySetInnerHTML={{ __html: siteLd }}
           />
         )}
+        {/* ⚠️ Não defina meta CSP aqui; os headers já cuidam da CSP */}
       </head>
       <body className="font-sans bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
         {children}
