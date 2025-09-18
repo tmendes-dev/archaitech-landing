@@ -2,6 +2,7 @@
 import FadeIn from "./FadeIn";
 import HoverLift from "./HoverLift";
 import SectionSkeleton from "./SectionSkeleton";
+import Spinner from "./Spinner";
 type ServiceItem = { title: string; desc: string };
 
 export default function Services({
@@ -14,7 +15,7 @@ export default function Services({
       </FadeIn>
       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {services === undefined || services === null ? (
-          <SectionSkeleton style={{ height: 180, gridColumn: '1/-1' }} />
+          <div className="flex justify-center items-center h-40 col-span-full"><Spinner /></div>
         ) : services?.length ? services.map((s, i) => {
           // Pick an icon for each service by index (customize as needed)
           const icons = [

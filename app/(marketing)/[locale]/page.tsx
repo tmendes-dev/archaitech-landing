@@ -35,7 +35,7 @@ import Contact from "./components/Contact";
 import SiteFooter from "./components/SiteFooter";
 import EngagementModels from "./components/EngagementModels";
 import FAQ from "./components/FAQ";
-// import Testimonials from "./components/Testimonials"; // [Commented out: What Our Clients Say section]
+// ...existing code...
 
 // Deep merge two objects, where `override` can be a DeepPartial of `base`
 // Arrays are replaced, not merged
@@ -169,11 +169,15 @@ export default async function Page({ params }: { params: { locale: string } }) {
   return (
     <main className="min-h-screen flex flex-col">
       <SiteHeader locale={locale} t={t} />
-      <Hero t={t} badges={badges} />
-      <Stats t={t} />
-      <Services t={t} services={services} />
-      <Process t={t} steps={steps} />
-      <CaseStudies
+  <Hero t={t} badges={badges} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-transparent to-slate-50 dark:to-slate-900 w-full" />
+  <Stats t={t} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-slate-50 dark:from-slate-900 to-white dark:to-slate-950 w-full" />
+  <Services t={t} services={services} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-white dark:from-slate-950 to-slate-50 dark:to-slate-900 w-full" />
+  <Process t={t} steps={steps} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-slate-50 dark:from-slate-900 to-white dark:to-slate-950 w-full" />
+  <CaseStudies
         title={t("cases.title")}
         subtitle={t("cases.subtitle")}
         empty={t("cases.empty") || "Case studies not found."}
@@ -182,20 +186,20 @@ export default async function Page({ params }: { params: { locale: string } }) {
         resultLabel={t("cases.labels.result") || "Result"}
         items={cases}
       />
-      <Tech t={t} pillars={techPillars} />
-      <EngagementModels title={merged.engagement?.title ?? ''} items={engagement} />
-      <Partners
+  <Tech t={t} pillars={techPillars} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-white dark:from-slate-950 to-slate-50 dark:to-slate-900 w-full" />
+  <EngagementModels title={merged.engagement?.title ?? ''} items={engagement} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-slate-50 dark:from-slate-900 to-white dark:to-slate-950 w-full" />
+  <Partners
         t={t}
         rene={{ role: t("partners.rene.role"), bio: t("partners.rene.bio") }}
         thomas={{ role: t("partners.thomas.role"), bio: t("partners.thomas.bio") }}
       />
-      {/*
-        // [Commented out: What Our Clients Say section]
-        <Testimonials />
-      */}
-      <Contact t={t} locale={locale} />
-      <FAQ title={merged.faq.title} items={faq} />
-      <SiteFooter t={t} />
+      {/* What Our Clients Say section removed */}
+  <Contact t={t} locale={locale} />
+  <div className="h-6 sm:h-10 bg-gradient-to-b from-white dark:from-slate-950 to-slate-50 dark:to-slate-900 w-full" />
+  <FAQ title={merged.faq.title} items={faq} />
+  <SiteFooter t={t} />
     </main>
   );
 }

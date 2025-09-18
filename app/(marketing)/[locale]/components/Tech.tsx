@@ -2,6 +2,7 @@
 import FadeIn from "./FadeIn";
 import HoverLift from "./HoverLift";
 import SectionSkeleton from "./SectionSkeleton";
+import Spinner from "./Spinner";
 
 type Pillar = { name: string; icon: string; items: string[] };
 
@@ -16,7 +17,7 @@ export default function Tech({
 
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars === undefined || pillars === null ? (
-            <SectionSkeleton style={{ height: 180, gridColumn: '1/-1' }} />
+            <div className="flex justify-center items-center h-40 col-span-full"><Spinner /></div>
           ) : pillars.map((p, i) => (
             <FadeIn key={i} delay={0.1 + i * 0.1}>
               <HoverLift>

@@ -17,4 +17,6 @@ body { @apply antialiased bg-white text-slate-800 dark:bg-slate-950 dark:text-sl
 }
 
 /* Links + focus */
-a { @apply hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded; }
+
+
+

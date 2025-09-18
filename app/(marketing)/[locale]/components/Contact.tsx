@@ -1,5 +1,7 @@
 
+
 import FadeIn from "./FadeIn";
+import AssessmentForm from "./AssessmentForm";
 
 export default function Contact({ t, locale }: { t: (k: string) => string; locale: string }) {
   return (
@@ -16,18 +18,7 @@ export default function Contact({ t, locale }: { t: (k: string) => string; local
       </FadeIn>
       <FadeIn delay={0.3}>
         <div className="mt-8 grid gap-4 bg-slate-100 dark:bg-slate-800/30 p-6 rounded-2xl">
-          <p className="text-center text-sm sm:text-base text-slate-700 dark:text-slate-300">
-            {locale === "pt" ? "Enquanto isso, fale com a gente por e-mail: " : "Meanwhile, reach us via email: "}
-          </p>
-          <div className="flex justify-center mt-2">
-            <a
-              href="mailto:tmendes.dev@gmail.com"
-              className="inline-block rounded-xl px-6 py-3 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none transition-all shadow-md hover:shadow-lg"
-              aria-label="Email tmendes.dev@gmail.com"
-            >
-              tmendes.dev@gmail.com
-            </a>
-          </div>
+          <AssessmentForm email="tmendes.dev@gmail.com" />
         </div>
       </FadeIn>
     </section>

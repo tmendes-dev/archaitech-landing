@@ -9,6 +9,7 @@ import { getLocale } from "@/lib/i18n";
 import "@/styles/globals.css";
 import { Inter, Space_Grotesk, Fira_Code } from "next/font/google";
 import ThemeAndFontClassFixer from "./components/ThemeAndFontClassFixer";
+import StickyCTA from "./components/StickyCTA";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
@@ -158,7 +159,8 @@ export default function LocaleLayout({
           <Analytics />
           {children}
           <Testimonials />
-          <FeedbackWidget />
+          {/* <FeedbackWidget /> */}
+          <StickyCTA />
           <ScrollToTopButton />
         </ThemeAndFontClassFixer>
       </body>

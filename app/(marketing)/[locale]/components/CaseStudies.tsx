@@ -3,6 +3,7 @@ import { useState } from "react";
 import FadeIn from "./FadeIn";
 import HoverLift from "./HoverLift";
 import SectionSkeleton from "./SectionSkeleton";
+import Spinner from "./Spinner";
 
 type CaseStudy = { title: string; challenge: string; solution: string; result: string };
 
@@ -58,7 +59,7 @@ export default function CaseStudies({
         </button>
         <div className="flex-1 max-w-2xl">
           {items === undefined || items === null ? (
-            <SectionSkeleton />
+            <div className="flex justify-center items-center h-40"><Spinner /></div>
           ) : getVisibleItems().length ? getVisibleItems().map((c, i) => (
             <FadeIn key={i + start} delay={0.1}>
               <HoverLift>

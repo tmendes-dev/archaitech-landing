@@ -1,6 +1,7 @@
 
 import FadeIn from "./FadeIn";
 import HoverLift from "./HoverLift";
+import Spinner from "./Spinner";
 
 type Step = { title: string; desc: string };
 
@@ -12,7 +13,9 @@ export default function Process({
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16">
         <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 dark:text-white text-center mb-4">{t("process.title")}</h2>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
-          {steps.map((s, i) => (
+          {steps === undefined || steps === null ? (
+            <div className="flex justify-center items-center h-40 col-span-full"><Spinner /></div>
+          ) : steps.map((s, i) => (
             <FadeIn key={i} delay={0.1 + i * 0.1}>
               <HoverLift>
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md focus-within:ring-2 focus-within:ring-blue-500 focus-within:outline-none transition-shadow text-center">
