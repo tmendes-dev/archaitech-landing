@@ -1,40 +1,63 @@
 {
+  "meta": {
+    "title": "ArchAItechs — Consultoria em Arquitetura de Software, IA/ML e BI",
+    "description": "Consultoria sênior que ajuda CTOs e times de produto a gerar resultado com Arquitetura de Software, IA/ML e BI. Diagnóstico em 2 dias úteis."
+  },
   "nav": {
     "services": "Serviços",
     "partners": "Sócios",
-    "contact": "Contato",
-    "cases": "Cases",
-    "process": "Processo"
+    "contact": "Contato"
   },
   "hero": {
-    "title": "Arquitetura e IA para resolver problemas de verdade",
-    "subtitle": "Consultoria sênior em software, dados e ML. A gente desenha, constrói e entrega soluções que funcionam.",
+    "eyebrow": "Consultoria Sênior",
+    "title": "Arquitetura de Software e IA que geram resultado",
+    "subtitle": "Ajudamos CTOs e times de produto a reduzir lead time, ganhar observabilidade e levar IA à produção — com roadmap pragmático e ciclos curtos.",
     "cta": "Solicitar diagnóstico",
-    "badges": ["Performance", "Confiabilidade", "Resultados claros"]
+    "cta_secondary": "Como trabalhamos",
+    "badges": [
+      "Diagnóstico em 2 dias úteis",
+      "IA/ML com foco em produção",
+      "Sistemas observáveis e escaláveis"
+    ]
   },
-  "stats": {
-    "clients": "Clientes satisfeitos",
-    "projects": "Projetos entregues",
-    "years": "Anos de experiência"
+  "problem": {
+    "title": "Quando velocidade e segurança entram em choque",
+    "bullets": [
+      "Deploys imprevisíveis e lead time alto travam o roadmap.",
+      "Latência elevada e incidentes sem causa raiz minam a confiança.",
+      "Custo de cloud crescendo sem economia por unidade clara.",
+      "Backlog de dados e dashboards que não guiam decisões.",
+      "POCs de IA que não chegam à produção."
+    ]
+  },
+  "solution": {
+    "title": "O que resolvemos",
+    "bullets": [
+      "Releases previsíveis e ciclo mais curto.",
+      "Observabilidade ponta a ponta com SLOs claros e saúde de on-call.",
+      "FinOps prático: trade-offs de custo/perf que se pagam.",
+      "Métricas que conectam produto e operações à estratégia.",
+      "IA em produção com MLOps e ROI mensurável."
+    ]
   },
   "services": {
     "title": "O que fazemos",
     "items": [
       {
-        "title": "Arquitetura de software",
-        "desc": "Sistemas que escalam e evoluem: microsserviços quando agregam valor, simplicidade quando é melhor."
+        "title": "Arquitetura de Software",
+        "desc": "Boundaries que escalam (DDD), microsserviços onde fazem sentido, padrões de resiliência e tuning de performance. Desenhamos para observabilidade e velocidade desde o dia 0."
       },
       {
-        "title": "IA & machine learning",
-        "desc": "Da preparação de dados à produção: modelos, avaliação, MLOps e monitoramento contínuo."
+        "title": "IA & Machine Learning",
+        "desc": "Da seleção de casos de uso à produção. Automações e copilots, estratégias de avaliação e MLOps para que modelos evoluam com feedback e restrições reais."
       },
       {
-        "title": "Business intelligence",
-        "desc": "Dashboards e métricas que guiam decisões. Governança onde realmente importa."
+        "title": "Business Intelligence",
+        "desc": "Dashboards que líderes realmente usam. Governança, contratos de dados e camada de métricas que liga produto, operações e financeiro — sem atrito."
       },
       {
-        "title": "Cloud & experiência do dev",
-        "desc": "Pipelines, tuning de custo/performance e ferramentas que aceleram times sem burocracia."
+        "title": "Cloud & DevEx",
+        "desc": "Pipelines, plataformas e guardrails. Reduzimos carga cognitiva para o time entregar mais rápido, com trilhas douradas e visibilidade de custos por serviço e feature."
       }
     ]
   },
@@ -42,92 +65,80 @@
     "title": "Como trabalhamos",
     "steps": [
       {
-        "title": "Diagnóstico",
-        "desc": "Entender objetivos, restrições e o que define sucesso."
+        "title": "Diagnóstico (0–2 dias)",
+        "desc": "Mapeamos riscos, restrições e oportunidades. Você recebe um relatório conciso com quick wins e as primeiras decisões que destravam velocidade com segurança."
       },
       {
-        "title": "Estratégia",
-        "desc": "Plano prático com marcos, riscos e métricas de sucesso."
+        "title": "Quick wins (2–6 semanas)",
+        "desc": "Implementamos primeiro as mudanças de maior alavancagem — normalmente observabilidade, CI/CD e hotspots de performance — para gerar valor visível rápido."
       },
       {
-        "title": "Entrega",
-        "desc": "Implementação com boas práticas de arquitetura, engenharia e documentação."
-      },
-      {
-        "title": "Operar & evoluir",
-        "desc": "Medir em produção, aprender continuamente e iterar com segurança."
+        "title": "Roadmap de 90 dias",
+        "desc": "Plano prático cobrindo arquitetura, IA/ML/BI e métricas. Donos claros, marcos e critérios de sucesso que o negócio entende."
       }
     ]
   },
-  "cases": {
-    "title": "Cases de sucesso",
-    "subtitle": "Projetos representativos que apoiamos",
-    "labels": {
-      "challenge": "Desafio",
-      "solution": "Solução",
-      "result": "Resultado"
-    },
+  "case": {
+    "title": "Resultados que entregamos",
     "items": [
       {
-        "title": "Auditoria de licitações para Farma",
-        "challenge": "Comparar propostas complexas entre fornecedores com acurácia e rastreabilidade.",
-        "solution": "Aplicação com regras de comparação personalizáveis e relatórios para licitações na indústria farmacêutica, construída em microsserviços com cache distribuído, Kubernetes, MongoDB, Kafka e observabilidade de ponta a ponta.",
-        "result": "Análises mais rápidas, trilhas de auditoria claras e throughput que escala bem em períodos de pico."
+        "metric": "↓ 42% de latência P95",
+        "desc": "Tracing + ajustes de banco reduziram a cauda mantendo custos estáveis."
       },
       {
-        "title": "Motor de precificação em tempo real",
-        "challenge": "Picos de tráfego causavam latência e falhas.",
-        "solution": "Serviços orientados a eventos com cache resiliente e circuit breaking. Otimização do caminho crítico.",
-        "result": "p95 em torno de 120 ms e taxa de erro abaixo de 0,1% em 10× do volume normal."
+        "metric": "↓ 28% de lead time",
+        "desc": "Pipelines enxutos e lotes menores trouxeram releases mais rápidas e seguras."
       },
       {
-        "title": "Painéis operacionais que geram ação",
-        "challenge": "Faltava uma visão compartilhada e confiável da saúde do sistema e das prioridades.",
-        "solution": "BI unificado com SLOs, drill-downs e telas amigáveis para plantão.",
-        "result": "Resolução de incidentes mais rápida e priorização mais clara para o roadmap de produto."
+        "metric": "IA em produção",
+        "desc": "Copilot para operações poupou ~120 h/mês com acurácia mensurável."
       }
-    ]
-  },
-  "tech": {
-    "title": "Tecnologias que usamos",
-    "subtitle": "Escolhidas pelo encaixe, não pelo hype",
-    "pillars": [
-      {
-        "name": "IA/ML",
-        "icon": "🤖",
-        "items": ["PyTorch", "scikit-learn", "MLflow"]
-      },
-      {
-        "name": "Cloud",
-        "icon": "☁️",
-        "items": ["Azure", "AWS", "GCP", "Docker", "Kubernetes"]
-      },
-      {
-        "name": "Dados",
-        "icon": "📊",
-        "items": ["PostgreSQL/SQL Server", "MongoDB/Neo4j", "Spark", "Power BI", "Tableau"]
-      },
-      {
-        "name": "Dev",
-        "icon": "💻",
-        "items": [".NET", "Python", "Node.js", "React/Next.js"]
-      }
-    ]
+    ],
+    "disclaimer": "Métricas anonimizada e indicativas; detalhes sob NDA."
   },
   "partners": {
     "title": "Sócios",
     "rene": {
-      "role": "Bancos de Dados & Knowledge Graphs",
-      "bio": "Renê é especialista em bancos de dados e integração de dados, com experiência em Knowledge Graphs (Wikibase/ontologias), soluções RAG, KNIME e administração Oracle. Atua também como professor em temas de governança e big data."
+      "role": "IA, ML & BI",
+      "bio": "Especialista em IA/ML aplicado, MLOps e BI. Conecta dados, modelos e produto para entregar impacto sob restrições reais."
     },
     "thomas": {
       "role": "Arquitetura & Engenharia de Software",
-      "bio": "Thomas é arquiteto/engenheiro .NET sênior focado em microsserviços, performance e observabilidade. Já liderou grandes refatorações e novos serviços back-end em saúde, além de mentorar times e elevar práticas de entrega."
+      "bio": "Arquitetura .NET, microsserviços e alta performance. Foco em escalabilidade, observabilidade e experiência do desenvolvedor."
     }
   },
+  "social_proof": {
+    "title": "Escolhida por times que precisam de resultado",
+    "bullets": [
+      "Trabalho sênior hands-on — sem juniors sem supervisão.",
+      "Integramos com o seu stack (.NET, Azure/AWS, dados modernos).",
+      "Resultados semanais claros e registro de decisões."
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "q": "O que recebo no diagnóstico?",
+        "a": "Um relatório objetivo com riscos atuais, oportunidades, 3–5 quick wins e um plano de 90 dias com donos e critérios de sucesso."
+      },
+      {
+        "q": "Em quanto tempo podemos começar?",
+        "a": "Geralmente iniciamos o diagnóstico em até 2 dias úteis. Se houver prazo crítico, nos avise e ajustamos o escopo."
+      },
+      {
+        "q": "Vocês trabalham junto com nosso time?",
+        "a": "Sim. Atuamos lado a lado com engenheiros e liderança, co-desenhando decisões e deixando documentação e playbooks claros."
+      },
+      {
+        "q": "Quais stacks vocês dominam?",
+        "a": "Arquitetura em .NET/Azure e AWS, microsserviços, observabilidade, performance, IA/ML e BI com abordagem pragmática e foco em produção."
+      }
+    ]
+  },
   "cta": {
-    "title": "Vamos avançar?",
-    "subtitle": "Compartilhe seu objetivo e em até 2 dias úteis entregamos um diagnóstico.",
+    "title": "Pronto para o próximo nível?",
+    "subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
     "button": "Falar com a ArchAItechs"
   },
   "form": {
@@ -135,11 +146,7 @@
     "email": "Email",
     "message": "Conte sobre seu desafio"
   },
-  "alert": {
-    "sent": "Mensagem enviada! Obrigado."
-  },
   "footer": {
-    "madeWith": "Feito com Next.js",
-    "rights": "Todos os direitos reservados."
+    "madeWith": "Feito com Next.js"
   }
 }

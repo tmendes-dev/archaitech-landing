@@ -1,18 +1,46 @@
 {
+  "meta": {
+    "title": "ArchAItechs — Software Architecture, AI/ML & BI Consulting",
+    "description": "Senior consultancy helping CTOs and product teams ship measurable outcomes with Software Architecture, AI/ML and BI. Assessment in 2 business days."
+  },
   "nav": {
     "services": "Services",
     "partners": "Partners",
-    "contact": "Contact",
-    "cases": "Case studies",
-    "process": "Process"
+    "contact": "Contact"
   },
   "hero": {
-    "title": "Architecture & AI that solve real problems",
-    "subtitle": "Hands-on senior consultants in software, data and ML. We design, build and deliver solutions that work.",
-    "cta": "Request an assessment",
-    "badges": ["Performance", "Reliability", "Clear outcomes"]
+    "eyebrow": "Senior Consulting",
+    "title": "Software Architecture & AI that drive outcomes",
+    "subtitle": "We help CTOs and product teams reduce processing time, gain observability and get AI to production — with a practical roadmap and short delivery cycles.",
+    "cta": "Get your assessment",
+    "cta_secondary": "See how we work",
+    "badges": [
+      "Assessment in 2 business days",
+      "Production-first AI/ML",
+      "Observable & scalable systems"
+    ]
   },
-  "stats": {
+  "problem": {
+    "title": "When velocity and safety collide",
+    "bullets": [
+      "Unpredictable deploys and long lead time slow the roadmap.",
+      "High latency and unclear incidents erode trust with stakeholders.",
+      "Rising cloud costs without clear unit economics.",
+      "Data backlog and dashboards that don’t drive decisions.",
+      "AI POCs that never reach production."
+    ]
+  },
+  "solution": {
+    "title": "What we fix",
+    "bullets": [
+      "Predictable releases and shorter cycle time.",
+      "End-to-end observability with clear SLOs and on-call hygiene.",
+      "Practical FinOps: cost/perf trade-offs that pay for themselves.",
+      "Metrics that connect product and operations to strategy.",
+      "AI in production with MLOps and measurable ROI."
+    ]
+  },
+    "stats": {
     "clients": "Happy clients",
     "projects": "Projects delivered",
     "years": "Years of experience"
@@ -21,45 +49,37 @@
     "title": "What we do",
     "items": [
       {
-        "title": "Software architecture",
-        "desc": "Systems that scale and evolve: microservices when they bring value, simplicity when it’s the right call."
+        "title": "Architecture/Engineering & Cloud Infrastructure",
+        "desc": "Boundaries that scale (DDD), microservices where they pay off, reliability patterns, and performance tuning. We design for observability and delivery speed from day one.Pipelines, platforms and guardrails. We cut cognitive load so teams ship faster, with clear golden paths and cost visibility for each service and feature."
       },
       {
-        "title": "AI & machine learning",
-        "desc": "From data prep to production: models, evaluation, MLOps and ongoing monitoring."
+        "title": "AI & Machine Learning",
+        "desc": "From use-case selection to production. Automations and copilots, evaluation strategies, and MLOps so models improve with real feedback and real constraints."
       },
       {
-        "title": "Business intelligence",
-        "desc": "Dashboards and metrics that guide decisions. Governance and structure where it matters."
-      },
-      {
-        "title": "Cloud & developer experience",
-        "desc": "Pipelines, cost/perf tuning and tooling to empower teams without adding friction."
+        "title": "Business Intelligence",
+        "desc": "Dashboards that decision-makers actually use. Governance, data contracts and a metrics layer that links product, ops and finance — without adding friction."
       }
     ]
   },
   "process": {
-    "title": "Our process",
+    "title": "How we work",
     "steps": [
       {
-        "title": "Assessment",
-        "desc": "Understand goals, constraints and what success means for your business."
+        "title": "Assessment (0–2 days)",
+        "desc": "We map risks, constraints and opportunities. You get a concise report with quick wins and the first decisions that unlock speed with safety."
       },
       {
-        "title": "Strategy",
-        "desc": "Build a practical plan with milestones, risks and success metrics."
+        "title": "Quick wins (2–6 weeks)",
+        "desc": "We implement the highest-leverage changes first — usually observability, CI/CD and performance hotspots — to generate visible value quickly."
       },
       {
-        "title": "Delivery",
-        "desc": "Implement with best practices in architecture, engineering and documentation."
-      },
-      {
-        "title": "Operate & improve",
-        "desc": "Measure in production, learn continuously and iterate safely."
+        "title": "90-day roadmap",
+        "desc": "A practical plan covering architecture, AI/ML/BI and metrics. Clear owners, milestones and success criteria the business understands."
       }
     ]
   },
-  "cases": {
+ "cases": {
     "title": "Case studies",
     "subtitle": "Representative projects we’ve supported",
     "labels": {
@@ -88,46 +108,49 @@
       }
     ]
   },
-  "tech": {
-    "title": "Technologies we use",
-    "subtitle": "Chosen for fit, not hype",
-    "pillars": [
-      {
-        "name": "AI/ML",
-        "icon": "🤖",
-        "items": ["PyTorch", "scikit-learn", "MLflow"]
-      },
-      {
-        "name": "Cloud",
-        "icon": "☁️",
-        "items": ["Azure", "AWS", "GCP", "Docker", "Kubernetes"]
-      },
-      {
-        "name": "Data",
-        "icon": "📊",
-        "items": ["PostgreSQL/SQL Server", "MongoDB/Neo4j", "Spark", "Power BI", "Tableau"]
-      },
-      {
-        "name": "Dev",
-        "icon": "💻",
-        "items": [".NET", "Python", "Node.js", "React/Next.js"]
-      }
-    ]
-  },
   "partners": {
     "title": "Partners",
     "rene": {
-      "role": "Databases & Knowledge Graphs",
-      "bio": "Renê specializes in databases and data integration, with expertise in Knowledge Graphs (Wikibase/ontologies), RAG solutions, KNIME and Oracle administration. He also teaches data governance and big-data topics at universities."
+      "role": "AI, ML & BI",
+      "bio": "Expert in applied AI/ML, MLOps and BI. Connects data, models and product to deliver impact under real-world constraints."
     },
     "thomas": {
       "role": "Architecture & Software Engineering",
-      "bio": "Thomas is a senior .NET architect and engineer focused on microservices, performance and observability. He has led major refactors and new back-end services in healthcare, mentoring teams and raising delivery standards."
+      "bio": ".NET architecture, microservices and high performance. Focused on scalability, observability and developer experience."
     }
   },
+  "social_proof": {
+    "title": "Trusted by teams who need results",
+    "bullets": [
+      "Hands-on senior work — no unsupervised juniors.",
+      "We integrate with your stack (.NET, Azure/AWS, modern data).",
+      "Clear weekly outcomes and decision logs."
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "q": "What do I receive in the assessment?",
+        "a": "A concise report with current risks, opportunities, 3–5 quick wins, and a 90-day plan with owners and success criteria."
+      },
+      {
+        "q": "How soon can we start?",
+        "a": "We usually begin the assessment within 2 business days. If you have a hard deadline, tell us and we will adjust the scope."
+      },
+      {
+        "q": "Do you work alongside our team?",
+        "a": "Yes. We embed with your engineers and leaders, co-design decisions, and leave behind clear docs and playbooks."
+      },
+      {
+        "q": "What stacks do you focus on?",
+        "a": "Architecture in .NET/Azure and AWS, microservices, observability, performance, AI/ML and BI with a pragmatic, production-first approach."
+      }
+    ]
+  },
   "cta": {
-    "title": "Ready to move forward?",
-    "subtitle": "Share your challenge and we’ll deliver an assessment within 2 business days.",
+    "title": "Ready for the next level?",
+    "subtitle": "Tell us your challenge. We’ll send an assessment within 2 business days.",
     "button": "Talk to ArchAItechs"
   },
   "form": {
@@ -135,11 +158,7 @@
     "email": "Email",
     "message": "Tell us about your challenge"
   },
-  "alert": {
-    "sent": "Message sent! Thank you."
-  },
   "footer": {
-    "madeWith": "Made with Next.js",
-    "rights": "All rights reserved."
+    "madeWith": "Made with Next.js"
   }
 }
