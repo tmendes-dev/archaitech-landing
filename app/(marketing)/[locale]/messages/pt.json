@@ -1,37 +1,145 @@
 {
-  "nav": { "services": "Serviços", "partners": "Sócios", "contact": "Contato" },
+  "nav": {
+    "services": "Serviços",
+    "partners": "Sócios",
+    "contact": "Contato",
+    "cases": "Cases",
+    "process": "Processo"
+  },
   "hero": {
-    "title": "Arquitetura de Software & Inteligência Artificial para gerar resultado",
-    "subtitle": "Consultoria sênior em TI, AI/ML e BI — da estratégia ao delivery.",
+    "title": "Arquitetura e IA para resolver problemas de verdade",
+    "subtitle": "Consultoria sênior em software, dados e ML. A gente desenha, constrói e entrega soluções que funcionam.",
     "cta": "Solicitar diagnóstico",
-    "badges": ["Core Web Vitals", "SEO", "Entrega sênior"]
+    "badges": ["Performance", "Confiabilidade", "Resultados claros"]
+  },
+  "stats": {
+    "clients": "Clientes satisfeitos",
+    "projects": "Projetos entregues",
+    "years": "Anos de experiência"
   },
   "services": {
     "title": "O que fazemos",
     "items": [
-      { "title": "Arquitetura de Software", "desc": "Domain-Driven Design, microsserviços, observabilidade, performance." },
-      { "title": "AI & Machine Learning", "desc": "Modelos, MLOps, automações e copilots aplicados ao negócio." },
-      { "title": "Business Intelligence", "desc": "Dashboards, governança de dados e decisões guiadas por métricas." },
-      { "title": "Cloud & DevEx", "desc": "Pipelines, custo/benefício e plataformas para acelerar times." }
+      {
+        "title": "Arquitetura de software",
+        "desc": "Sistemas que escalam e evoluem: microsserviços quando agregam valor, simplicidade quando é melhor."
+      },
+      {
+        "title": "IA & machine learning",
+        "desc": "Da preparação de dados à produção: modelos, avaliação, MLOps e monitoramento contínuo."
+      },
+      {
+        "title": "Business intelligence",
+        "desc": "Dashboards e métricas que guiam decisões. Governança onde realmente importa."
+      },
+      {
+        "title": "Cloud & experiência do dev",
+        "desc": "Pipelines, tuning de custo/performance e ferramentas que aceleram times sem burocracia."
+      }
+    ]
+  },
+  "process": {
+    "title": "Como trabalhamos",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "desc": "Entender objetivos, restrições e o que define sucesso."
+      },
+      {
+        "title": "Estratégia",
+        "desc": "Plano prático com marcos, riscos e métricas de sucesso."
+      },
+      {
+        "title": "Entrega",
+        "desc": "Implementação com boas práticas de arquitetura, engenharia e documentação."
+      },
+      {
+        "title": "Operar & evoluir",
+        "desc": "Medir em produção, aprender continuamente e iterar com segurança."
+      }
+    ]
+  },
+  "cases": {
+    "title": "Cases de sucesso",
+    "subtitle": "Projetos representativos que apoiamos",
+    "labels": {
+      "challenge": "Desafio",
+      "solution": "Solução",
+      "result": "Resultado"
+    },
+    "items": [
+      {
+        "title": "Auditoria de licitações para Farma",
+        "challenge": "Comparar propostas complexas entre fornecedores com acurácia e rastreabilidade.",
+        "solution": "Aplicação com regras de comparação personalizáveis e relatórios para licitações na indústria farmacêutica, construída em microsserviços com cache distribuído, Kubernetes, MongoDB, Kafka e observabilidade de ponta a ponta.",
+        "result": "Análises mais rápidas, trilhas de auditoria claras e throughput que escala bem em períodos de pico."
+      },
+      {
+        "title": "Motor de precificação em tempo real",
+        "challenge": "Picos de tráfego causavam latência e falhas.",
+        "solution": "Serviços orientados a eventos com cache resiliente e circuit breaking. Otimização do caminho crítico.",
+        "result": "p95 em torno de 120 ms e taxa de erro abaixo de 0,1% em 10× do volume normal."
+      },
+      {
+        "title": "Painéis operacionais que geram ação",
+        "challenge": "Faltava uma visão compartilhada e confiável da saúde do sistema e das prioridades.",
+        "solution": "BI unificado com SLOs, drill-downs e telas amigáveis para plantão.",
+        "result": "Resolução de incidentes mais rápida e priorização mais clara para o roadmap de produto."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Tecnologias que usamos",
+    "subtitle": "Escolhidas pelo encaixe, não pelo hype",
+    "pillars": [
+      {
+        "name": "IA/ML",
+        "icon": "🤖",
+        "items": ["PyTorch", "scikit-learn", "MLflow"]
+      },
+      {
+        "name": "Cloud",
+        "icon": "☁️",
+        "items": ["Azure", "AWS", "GCP", "Docker", "Kubernetes"]
+      },
+      {
+        "name": "Dados",
+        "icon": "📊",
+        "items": ["PostgreSQL/SQL Server", "MongoDB/Neo4j", "Spark", "Power BI", "Tableau"]
+      },
+      {
+        "name": "Dev",
+        "icon": "💻",
+        "items": [".NET", "Python", "Node.js", "React/Next.js"]
+      }
     ]
   },
   "partners": {
     "title": "Sócios",
     "rene": {
-      "role": "AI, ML e BI",
-      "bio": "Especialista em IA/ML aplicado, MLOps e BI. Conecta dados, modelos e produto para gerar impacto real."
+      "role": "Bancos de Dados & Knowledge Graphs",
+      "bio": "Renê é especialista em bancos de dados e integração de dados, com experiência em Knowledge Graphs (Wikibase/ontologias), soluções RAG, KNIME e administração Oracle. Atua também como professor em temas de governança e big data."
     },
     "thomas": {
       "role": "Arquitetura & Engenharia de Software",
-      "bio": "Arquitetura .NET, microsserviços e alta performance. Foco em escalabilidade, observabilidade e DX."
+      "bio": "Thomas é arquiteto/engenheiro .NET sênior focado em microsserviços, performance e observabilidade. Já liderou grandes refatorações e novos serviços back-end em saúde, além de mentorar times e elevar práticas de entrega."
     }
   },
   "cta": {
-    "title": "Pronto para o próximo nível?",
-    "subtitle": "Conte seu desafio. Enviamos um diagnóstico em 2 dias úteis.",
+    "title": "Vamos avançar?",
+    "subtitle": "Compartilhe seu objetivo e em até 2 dias úteis entregamos um diagnóstico.",
     "button": "Falar com a ArchAItechs"
   },
-  "form": { "name": "Nome", "email": "Email", "message": "Conte sobre seu desafio" },
-  "alert": { "sent": "Mensagem enviada! Obrigado." },
-  "footer": { "madeWith": "Feito com Next.js" }
+  "form": {
+    "name": "Nome",
+    "email": "Email",
+    "message": "Conte sobre seu desafio"
+  },
+  "alert": {
+    "sent": "Mensagem enviada! Obrigado."
+  },
+  "footer": {
+    "madeWith": "Feito com Next.js",
+    "rights": "Todos os direitos reservados."
+  }
 }
