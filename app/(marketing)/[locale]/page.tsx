@@ -196,7 +196,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
         thomas={{ role: t("partners.thomas.role"), bio: t("partners.thomas.bio") }}
       />
       {/* What Our Clients Say section removed */}
-  <Contact t={t} locale={locale} />
+  {/* <Contact t={t} locale={locale} /> */}
   <div className="h-6 sm:h-10 bg-gradient-to-b from-white dark:from-slate-950 to-slate-50 dark:to-slate-900 w-full" />
   <FAQ title={merged.faq.title} items={faq} />
   <SiteFooter t={t} />
