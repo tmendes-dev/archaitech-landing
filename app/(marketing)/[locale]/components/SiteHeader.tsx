@@ -64,6 +64,10 @@ export default function SiteHeader({
           </a>
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault(); 
+              alert("Maybe later 🙂");
+            }}
             className="rounded-xl px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none transition-colors shadow-md hover:shadow-lg"
           >
             {t("nav.contact")}
